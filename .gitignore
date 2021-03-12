@@ -1,0 +1,7 @@
+.env
+.cli.py.swp
+.idea
+
+__pycache__
+venv
+accounts_data.txt
