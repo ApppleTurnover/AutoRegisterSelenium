@@ -144,9 +144,13 @@ def register(browser, name, email, count):
 
         driver.find_element_by_xpath("//div[text() = 'Стать клиентом']").click()
         time.sleep(1)
-        parse_and_save_data(email)
+
+        if is_random:
+            parse_and_save_data(email)
+
         print(f"Complete \\({i + 1})")
         driver.quit()
+
 
 @input_missing
 def get_attr() -> dict:
