@@ -205,8 +205,8 @@ if __name__ == '__main__':
     domains = get_domains()
     args = get_attr()
     register(
-        browser=args.get('browser'),
+        browser=args.get('browser').capitalize(),
         name=args.get('name'),
-        email=args.get('email'),
+        email=args.get('email').lower(),
         count=args.get('rand'),
     )
