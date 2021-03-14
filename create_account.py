@@ -65,10 +65,11 @@ def parse_and_save_data(email: str, login=None, password=None):
             mail_text = message['mail_text_only'].replace(' ', '')
             login = re.findall(r'Логин:<strong>(.*?)</strong>', mail_text, re.DOTALL)[0]
             password = re.findall(r'Пароль:<strong>(.*?)</strong>', mail_text, re.DOTALL)[0]
+            break
 
     if login and password:
         with open('accounts_data.txt', 'a+') as f:
-            f.write(f"[\ne:{email};\nl:{login};\np:{password}\n],")
+            f.write(f"[\nl:{login};\np:{password}\n],")
 
 
 def check_data(name, email):
